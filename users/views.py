@@ -2,7 +2,7 @@ from django.shortcuts import render, HttpResponsePermanentRedirect
 from django.urls import reverse
 from django.contrib import auth
 
-from users.forms import UserLoginForm
+from users.forms import UserLoginForm, UserRegistrationForm
 
 
 def login(request):
@@ -22,4 +22,6 @@ def login(request):
 
 
 def register(request):
-    return render(request, 'users/register.html')
+    form = UserRegistrationForm()
+    context = {'form': form}
+    return render(request, 'users/register.html', context)
