@@ -32,7 +32,7 @@ class UserRegistrationForm(UserCreationForm):
     tags = forms.BooleanField(widget=forms.CheckboxInput(attrs={'placeholder': 'Подтвердите пароль'}))
     class Meta:
         model = User
-        fields = ('first_name', 'last_name', 'username', 'email', 'birthday', 'password1', 'password2', 'tags')
+        fields = ('first_name', 'last_name', 'username', 'email', 'birthday', 'password1', 'password2')
 
     def __init__(self, *args, **kwargs):
         super(UserRegistrationForm, self).__init__(*args, **kwargs)
